@@ -19,7 +19,7 @@ export class HomeComponent implements OnInit {
   ngOnInit(): void {}
 
   sistema(){
-    this.router.navigate(['/login']);
+    this.router.navigate(['/dashboard']);
   }
 
 }

@@ -25,7 +25,7 @@ db.connect((err) => {
 app.use(cors());
 app.use(bodyParser.json());
 
-// Rota de exemplo para obter perfis
+// Rota de exemplo para obter ffis
 app.get('/perfis', (req, res) => {
   console.log('Rota /perfis acessada.');
   // Lógica para obter perfis do banco de dados

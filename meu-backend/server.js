@@ -12,6 +12,7 @@ const db = mysql.createConnection({
   user: 'root',
   password: 'Lun121107#',
   database: 'crud',
+  // port: '41660'
 });
 
 db.connect((err) => {

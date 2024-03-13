@@ -7,7 +7,7 @@
       <div class="select home">
         <img src="../../../assets/Dashboard-Layout.svg" class="icon" alt="">
       </div>
-      <div class="select add">
+      <div class="select add" (click)="button()">
         <img src="../../../assets/Add.svg" class="icon" alt="">
 
       </div>
@@ -16,7 +16,7 @@
 
       </div>
     </div>
-    <div class="select sair" title="sair">
+    <div class="select sair" (click)="logout()" title="sair">
       <img src="../../../assets/Logout.svg" class="icon" alt="">
 
     </div>
@@ -38,16 +38,16 @@
       <div class="entrada">
         <h1>Entrada</h1>
         <img src="../../../assets/arrow-entrada.svg" class="type-icon" alt="">
-        <h2>R$ 00,00</h2>
+        <h2>R$ {{this.entrada}}</h2>
       </div>
       <div class="saidas">
         <h1>Saída</h1>
         <img src="../../../assets/arrow-saidas.svg" class="type-icon" alt="">
-        <h2>R$ 00,00</h2>
+        <h2>R$ {{this.saidas}}</h2>
       </div>
       <div class="total">
         <h1>Total</h1>
-        <h2>R$ 00,00</h2>
+        <h2>R$ {{this.total}}</h2>
       </div>
     </div>
 

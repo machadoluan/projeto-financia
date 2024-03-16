@@ -1,5 +1,7 @@
-import { Component } from '@angular/core';
-import {Router } from '@angular/router';
+import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
+import { ModalAddComponent } from '../../components/modal-add/modal-add.component';
 
 @Component({
   selector: 'app-dashboard',
@@ -8,26 +10,28 @@ import {Router } from '@angular/router';
   templateUrl: './dashboard.component.html',
   styleUrl: './dashboard.component.scss'
 })
-export class DashboardComponent {
+export class DashboardComponent implements OnInit {
 
   constructor(
-    private router: Router
-  ){}
+    private router: Router,
+    private modalService: NgbModal
+  ) { }
+
+  ngOnInit(): void {
+    this.modalService.open(ModalAddComponent,  { size: 'xl' })
+
+  }
 
   entrada: String = "00,00"
   saidas: String = "00,00"
   total: String = "00,00"
 
-  button(){
-    this.entrada = "1500"
+  button() {
   }
-
-
-
 
   // logout
 
-  logout(){
+  logout() {
     this.router.parseUrl('/login');
   }
 }

@@ -1,0 +1,57 @@
+.modal {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  width: 50%; /* Você pode ajustar este valor conforme necessário */
+  height: 50%; /* Você pode ajustar este valor conforme necessário */
+  background-color: #19161F;
+  transform: translate(-50%, -50%);
+  border-radius: 15px;
+
+  .titulo{
+    display: flex;
+    justify-content: center;
+    color: #ffffff;
+  }
+
+  .inputs{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+
+    input{
+      width: 40%;
+      padding: 10px;
+      background-color: transparent;
+      border: 2px solid white;
+      border-radius: 10px;
+      color: white;
+      font-size: 14px;
+    }
+
+    #valor{
+      width: 20%;
+    }
+
+    select {
+      /* Estilos gerais do select */
+      width: 23%;
+      font-size: 14px;
+      padding: 10px;
+      color: #ffffff;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      background-color: transparent;
+      /* Adicione outros estilos conforme necessário */
+
+
+       option {
+        /* Estilos das opções suspensas */
+        color: #000000;
+        /* Adicione outros estilos conforme necessário */
+      }
+    }
+  }
+}

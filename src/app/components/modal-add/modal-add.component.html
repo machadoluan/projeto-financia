@@ -4,16 +4,17 @@
   </div>
 
   <div class="inputs">
-    <input type="text" name="descricao" id="descricao" placeholder="Descrição">
-    <input type="number" name="valor" id="valor" placeholder="Valor">
-    <select name="options" id="options">
+    <input type="text" [(ngModel)]="descricao" name="descricao" id="descricao" placeholder="Descrição">
+    <input type="number" [(ngModel)]="valor" name="valor" id="valor" placeholder="Valor">
+    <select name="options" id="options" [(ngModel)]="tipo">
       <option value="Entrada">Entrada</option>
-      <option value="saida">Saida</option>
+      <option value="Saida">Saída</option>
     </select>
+
   </div>
 
   <div class="buttons">
-    <button>Cancelar</button>
-    <button>Enviar</button>
+    <button id="cancelar" (click)="cancelar()">Cancelar</button>
+    <button id="Concluir" (click)="confirmar()">Concluir</button>
   </div>
 </div>

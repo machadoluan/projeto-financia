@@ -2,36 +2,42 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { ModalAddComponent } from '../../components/modal-add/modal-add.component';
+import { AuthGuard } from '../../auth.guard';
+import { SharedDataService } from '../../services/shared-data.service';
+import { CommonModule } from '@angular/common';
+
+
 
 @Component({
   selector: 'app-dashboard',
   standalone: true,
-  imports: [],
+  imports: [CommonModule],
   templateUrl: './dashboard.component.html',
   styleUrl: './dashboard.component.scss'
 })
 export class DashboardComponent implements OnInit {
+  entradas: { descricao: string, valor: number, tipo: string }[] = [];
 
   constructor(
     private router: Router,
-    private modalService: NgbModal
+    private modalService: NgbModal,
+    private authGuard: AuthGuard,
+    public sharedDataService: SharedDataService
   ) { }
 
   ngOnInit(): void {
-    this.modalService.open(ModalAddComponent,  { size: 'xl' })
+    this.sharedDataService.atualizarEntradas();
+    this.entradas = this.sharedDataService.entradas;
 
+    console.log("Dados", this.sharedDataService.atualizarEntradas())
   }
-
-  entrada: String = "00,00"
-  saidas: String = "00,00"
-  total: String = "00,00"
 
   button() {
+    this.modalService.open(ModalAddComponent, { size: 'xl' })
   }
 
-  // logout
 
   logout() {
-    this.router.parseUrl('/login');
+    this.authGuard.logout()
   }
 }

@@ -38,44 +38,46 @@
       <div class="entrada">
         <h1>Entrada</h1>
         <img src="../../../assets/arrow-entrada.svg" class="type-icon" alt="">
-        <h2>R$ {{this.entrada}}</h2>
+        <h2>R$ </h2>
       </div>
       <div class="saidas">
         <h1>Saída</h1>
         <img src="../../../assets/arrow-saidas.svg" class="type-icon" alt="">
-        <h2>R$ {{this.saidas}}</h2>
+        <h2>R$ </h2>
       </div>
       <div class="total">
         <h1>Total</h1>
-        <h2>R$ {{this.total}}</h2>
+        <h2>R$ </h2>
       </div>
     </div>
 
     <div class="descricao">
       <div class="content">
-          <div class="title-desc">
-            <div class="desc">
-              <h1>Descrição</h1>
-            </div>
-            <div class="valor">
-              <h1 id="valor">Valor</h1>
-            </div>
-            <div class="tipo">
-              <h1>Tipo</h1>
-            </div>
+        <div class="title-desc">
+          <div class="desc">
+            <h1>Descrição</h1>
           </div>
+          <div class="valor">
+            <h1 id="valor">Valor</h1>
+          </div>
+          <div class="tipo">
+            <h1>Tipo</h1>
+          </div>
+        </div>
 
-          <div class="value-desc">
-            <div class="desc">
-              <h1>Salario</h1>
-            </div>
-            <div class="valor">
-              <h1>R$: 1500</h1>
-            </div>
-            <div class="tipo">
-              <img src="../../../assets/arrow-entrada.svg" style="width: 30px;" alt="">
-            </div>
+
+        <div *ngFor="let entrada of sharedDataService.entradas" class="value-desc">
+          <div class="desc">
+            <h1>{{ entrada.descricao }}</h1>
           </div>
+          <div class="valor">
+            <h1>R$: {{ entrada.valor }}</h1>
+          </div>
+          <div class="tipo">
+            <img *ngIf="entrada.tipo === 'Entrada'" src="../../../assets/arrow-entrada.svg" style="width: 30px;" alt="">
+            <img *ngIf="entrada.tipo === 'Saida'" src="../../../assets/arrow-saidas.svg" style="width: 30px;" alt="">
+          </div>
+        </div>
       </div>
     </div>
   </main>

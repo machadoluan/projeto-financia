@@ -80,7 +80,6 @@
   }
   .status{
     width: 100%;
-    // background-color: #fff;
     display: flex;
     justify-content: space-between;
     padding: 0 50px;
@@ -91,7 +90,7 @@
     .total{
       position: relative;
       width: 27%;
-      height: 190px;
+      height: 170px;
       background-color: #342F3E;
       border-radius: 10px;
       font-family: Lexend;
@@ -99,7 +98,7 @@
       text-align: center;
       display: flex;
       flex-direction: column;
-      gap: 3rem;
+      gap: 1rem;
 
       h1{
         padding-top: 30px;
@@ -118,7 +117,7 @@
 
   .descricao{
     width: 100%;
-    padding: 30px 50px;
+    padding: 20px 50px;
 
 
     .content {

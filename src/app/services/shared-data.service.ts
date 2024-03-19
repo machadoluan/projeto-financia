@@ -10,7 +10,7 @@ export class SharedDataService {
   constructor(private http: HttpClient) { }
 
   atualizarEntradas(): void {
-    this.http.get<any[]>('http://localhost:3000/entradas')
+    this.http.get<any[]>('https://backend-my-financeiro.up.railway.app/entradas')
       .subscribe(data => {
         this.entradas = data;
       });

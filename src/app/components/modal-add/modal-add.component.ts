@@ -31,7 +31,7 @@ export class ModalAddComponent implements OnInit {
   }
 
   confirmar(): void {
-    this.http.post('http://localhost:3000/adicionar-entrada', { descricao: this.descricao, valor: this.valor, tipo: this.tipo })
+    this.http.post('https://backend-my-financeiro.up.railway.app/adicionar-entrada', { descricao: this.descricao, valor: this.valor, tipo: this.tipo })
       .subscribe(response => {
         // Atualiza a lista de entradas no serviço compartilhado
         this.sharedDataService.atualizarEntradas();

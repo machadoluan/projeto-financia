@@ -9,7 +9,7 @@ import { tap } from 'rxjs/operators';
   providedIn: 'root',
 })
 export class AuthenticationService {
-  private apiUrl = 'http://localhost:3000'; // Atualize com o endereço do seu servidor
+  private apiUrl = 'https://backend-my-financeiro.up.railway.app'; // Atualize com o endereço do seu servidor
 
   constructor(private http: HttpClient) { }
 

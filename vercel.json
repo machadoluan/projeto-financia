@@ -1,15 +1,12 @@
 {
-  "version": 2,
-  "builds": [
-    {
-      "src": "meu-backend/server.js",
-      "use": "@vercel/node"
-    }
-  ],
   "routes": [
     {
+      "src": "/",
+      "dast": "/"
+    },
+    {
       "src": "(.*)",
-      "dest": "meu-backend/server.js"
+      "dest": "/"
     }
   ]
 
